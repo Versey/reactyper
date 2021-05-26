@@ -1,22 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import Typer_Input from './components/Typer_Input/Typer_Input';
+import Typer_Words from './components/Typer_Words/Typer_Words';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Typer_Words/>
+        <Typer_Input wpm = "65" />
       </header>
     </div>
   );
