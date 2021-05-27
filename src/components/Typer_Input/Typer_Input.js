@@ -1,20 +1,31 @@
 import { useState } from "react";
 import Form from 'react-bootstrap/Form';
 
-
-const Typer_Input = ()=>
-
+const Typer_Input = (props)=>
 {
-    const [input, setInput] = useState();
+    const [input, setInput] = useState("");
 
-    const handleInput = ()=>{return 0;}
+    const handleInputChange = (e) => {
+        setInput(e.target.value);
+      };
 
+    const handleSpace = (e) => {
+        if (e.keyCode === 32) 
+        {
+            setInput("");
+        }
+    }
 
     return(
         <Form.Group controlId="formBasicEmail">
-            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Control 
+            type="text"
+            value ={input}
+            onKeyDown={handleSpace}
+            onChange={handleInputChange}
+            />
             <Form.Text className="text-muted">
-                Word per minute: 95
+                Words per minute: {props.wpm}
             </Form.Text>
         </Form.Group>
     );

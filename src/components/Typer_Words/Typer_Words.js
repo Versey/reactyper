@@ -1,17 +1,13 @@
 import { useState } from "react";
 import Card from "react-bootstrap/Card";
 
-const Typer_Words = ()=>
-
+const Typer_Words = (props)=>
 {
-    const [input, setInput] = useState();
-
     const handleInput = ()=>{return 0;}
-
 
     return(
         <Card.Body>
-            hello world this is the boy the Indian from absolute whereby where
+            {props.words.map((word)=> word+" ")}
         </Card.Body>
     );
 }
